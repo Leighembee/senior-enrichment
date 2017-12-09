@@ -1,24 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { withRouter, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { fetchStudents } from './../reducers/students'
 
 
-
-// const StudentList = () => {
-//   const { students } = this.props
-
-//   return (
-//     <div>
-//       {students.map(student => {
-//         return (
-//           <div key={student.id}>{student.name}</div>
-//         )
-//       })}
-//       </div>
-//   )
-
-// }
 
 
 class StudentList extends Component {
@@ -32,14 +17,13 @@ class StudentList extends Component {
     if (this.props.students) {
       return (
         <div>
-          <h3 id='students-name'>Students </h3>
           <ul>
             {
               this.props.students.map(student => (
                 <li key={student.id}>
-                  <span>{student.name}</span>
-                  </li>
-            ))
+                  <h2>{student.firstName}</h2>
+                </li>
+                 ))
             }
 
 

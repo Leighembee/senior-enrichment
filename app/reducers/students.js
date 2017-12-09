@@ -1,6 +1,10 @@
 import axios from 'axios'
 
 const GET_STUDENTS = "GET_STUDENTS"
+const CREATE_STUDENT = 'CREATE_STUDENT'
+const UPDATE_STUDENT = 'UPDATE_STUDENT'
+const CHANGE_CAMPUS = 'UPDATE_CAMPUS'
+const DELETE_STUDENT = "DELETE_STUDENT"
 
 
 //action creators
@@ -11,7 +15,33 @@ export function getStudents(students) {
   }
 }
 
+function createStudent(student) {
+  return {
+    type: CREATE_STUDENT,
+    student: student
+  }
+}
 
+function updateStudent(student) {
+  return {
+    type: UPDATE_STUDENT,
+    student: student
+  }
+}
+
+function changeCampus(student) {
+  return {
+    type: CHANGE_CAMPUS,
+    student: student
+  }
+}
+
+function deleteStudent() {
+  return {
+    type: CHANGE_CAMPUS,
+    student: student
+  }
+}
 // // thunks
 
 
