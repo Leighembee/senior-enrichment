@@ -10,7 +10,7 @@ class Root extends Component {
   render() {
     return (
       <div>
-        {/* <CampusList/> */}
+        <CampusList/>
         <StudentList />
       </div>
     )

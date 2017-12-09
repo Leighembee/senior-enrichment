@@ -56,6 +56,7 @@ export const fetchCampuses = () => {
   }
 }
 
+
 export const createNewCampus = campus => {
   return dispatch => {
     axios.post('/api/campuses', campus)
@@ -64,6 +65,9 @@ export const createNewCampus = campus => {
     .catch(err => console.error(err))
   }
 }
+
+
+
 
 export const updateExistingCampus = campus => {
   return dispatch => {
