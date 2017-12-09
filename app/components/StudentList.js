@@ -22,6 +22,7 @@ class StudentList extends Component {
               this.props.students.map(student => (
                 <li key={student.id}>
                   <h2>{student.firstName}</h2>
+
                 </li>
                  ))
             }
