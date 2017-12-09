@@ -2,11 +2,34 @@
 const apiRouter = require('express').Router()
 const db = require('../db')
 
-// If you aren't getting to this object, but rather the index.html (something with a joke) your path is wrong.
-	// I know this because we automatically send index.html for all requests that don't make sense in our backend.
-	// Ideally you would have something to handle this, so if you have time try that out!
-apiRouter.get('/hello', (req, res) => res.send({hello: 'world'}))
+const Students = require('./../db/models/students')
 
-// You can put all routes in this file; HOWEVER, this file should almost be like a table of contents for the routers you create
 
-module.exports = apiRouter;
+
+//*********students*******
+  //find all students
+apiRouter.get('/students', (req, res, next) => {
+	Students.findAll()
+		.then(students => res.send(students))
+		.catch(next)
+})
+
+		//student by ID
+apiRouter.get('/students/:studentId', (req,res,next) => {
+	Students.findById(req.params.studentId)
+		.then(student => res.send(student))
+		.catch(next)
+})
+  //  post a new student
+apiRouter.post('/students', (req,res,next) => {
+	Students.create(req.body)
+		.then((student) => res.json(student))
+	  .catch(next)
+})
+
+
+//campuses
+
+
+
+module.exports = apiRouter
