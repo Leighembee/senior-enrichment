@@ -9,8 +9,8 @@ class AddStudent extends Component {
     this.state = {
      firstName: '',
      lastName: '',
-      email: '',
-     imageUrl: '',
+     email: '',
+     imageUrl: 'http://oi66.tinypic.com/jskf3c.jpg',
      campusId: ''
     }
 //bind handles here
@@ -37,15 +37,15 @@ class AddStudent extends Component {
   }
   //if the event exists then set state of campus id the event target val..else send an alert that a campus must be added!
   handleCampusChange(event) {
-    event.target.value > 0 ?
-      this.setState({ campusId: event.target.value }) :
-      alert(`oops! looks like, you didn't select a campus!`)
+    this.setState({ campusId: event.target.value })
   }
   handleSubmit(event) {
+
     event.preventDefault()
     const student = this.state
     this.props.createNewStudent(student)
-    this.setState({name: '', email: '', imageUrl: ''})
+    this.setState({ name: '', email: '', imageUrl: '' })
+
   }
 
   //render - form here

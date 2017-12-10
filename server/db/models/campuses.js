@@ -10,8 +10,7 @@ const Campuses = db.define('campuses', {
     allowNull: false
   },
   imageUrl: {
-    type: Sequelize.STRING,
-    defaultValue: 'http://oi66.tinypic.com/34do7cx.jpg'
+    type: Sequelize.STRING
   },
   description: {
     type: Sequelize.TEXT

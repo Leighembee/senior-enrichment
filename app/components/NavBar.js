@@ -6,7 +6,7 @@ import StudentList from './StudentList'
 
 const NavBar = () => {
   return (
-   <Router>
+
     <nav className="navbar">
       <div className="navbar-child">
         <ul>
@@ -15,12 +15,9 @@ const NavBar = () => {
         <li><Link className="navbar-link" to="/students">Students</Link></li>
           </ul>
 
-
-          <Route path='/campuses' component={CampusList} />
-          <Route path='/students' component={StudentList}/>
         </div>
       </nav>
-        </Router>
+
   )
 }
 

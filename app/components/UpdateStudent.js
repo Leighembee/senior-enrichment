@@ -76,7 +76,7 @@ class UpdateStudent extends Component {
 
 }
 
-const mapStateToprops = ({ campuses, students }) => ({
+const mapStateToProps = ({ campuses, students }) => ({
   campuses, students
 })
 

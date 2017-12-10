@@ -89,7 +89,7 @@ export const deleteExistingCampus = campus => {
 
 //reducer
 
-export default function campusesReducer(state = [], action) {
+export default function campusesReducer(campuses= [], action) {
 
   switch (action.type) {
     case GET_CAMPUSES:
@@ -109,6 +109,6 @@ export default function campusesReducer(state = [], action) {
       )
 
     default:
-      return state
+      return campuses
   }
 }

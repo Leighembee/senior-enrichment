@@ -13,4 +13,5 @@ Campuses.hasMany(Students, {
 })
 
 
+
 module.exports = db

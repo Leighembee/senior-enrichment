@@ -38,7 +38,7 @@ function changeCampus(student) {
 
 function deleteStudent() {
   return {
-    type: CHANGE_CAMPUS,
+    type:  DELETE_STUDENT,
     student: student
   }
 }
@@ -85,7 +85,7 @@ export const deleteExistingStudent = student => {
 
 //reducer
 
-export default function studentsReducer(state = [], action) {
+export default function studentsReducer(students = [], action) {
 
   switch (action.type) {
     case GET_STUDENTS:
@@ -105,6 +105,6 @@ export default function studentsReducer(state = [], action) {
       )
 
     default:
-      return state
+      return students
   }
 }

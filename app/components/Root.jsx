@@ -1,33 +1,12 @@
 import React, { Component } from 'react'
-import axios from 'axios'
-
-
-// import StudentList from './StudentList'
-// import CampusList from './CampusList'
-
 import NavBar from './NavBar'
+import { withRouter } from 'react-router-dom'
 
+const Root = ({ children }) => (
+  <div>
+    <NavBar />
+    { children }
+    </div>
+)
 
-class Root extends Component {
-  render() {
-    return (
-      <div>
-
-        <NavBar />
-
-      </div>
-    )
-  }
-}
-
-
-
-
-// const Root = ({children}) => (
-//   <div className="container-fluid">
-//   <Navbar />
-//   { children }
-// </div>
-// )
-
-export default Root;
+export default withRouter(Root);

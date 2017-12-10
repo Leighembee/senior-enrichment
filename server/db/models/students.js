@@ -17,9 +17,9 @@ const Students = db.define('students', {
     type: Sequelize.STRING,
     isUnique: true,
     allowNull: false,
-    // validate: {
-    //   isEmail: true
-    // }
+    validate: {
+      isEmail: true
+    }
   },
   //  gpa: {
   //   type: Sequelize.FLOAT,
@@ -31,7 +31,6 @@ const Students = db.define('students', {
 
   imageUrl: {
     type: Sequelize.STRING,
-    defaultValue: 'http://oi66.tinypic.com/jskf3c.jpg'
   },
      // to do: add virtual field to concatenate first and last names
    //student must be assigned to a campus
