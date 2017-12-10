@@ -35,7 +35,7 @@ class StudentList extends Component {
             )})
             }
 
-          <AddNewStudent />
+          {/* <AddNewStudent /> */}
           </div>
       )
     }
