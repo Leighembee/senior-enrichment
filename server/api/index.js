@@ -41,14 +41,18 @@ apiRouter.put('/:studentId', (req, res, next) => {
 })
 
 //delete a student
-apiRouter.delete('/:studentId', (req, res, next) => {
+apiRouter.delete('/students/:studentId', (req, res, next) => {
 	const studentId = req.params.studentId
+	console.log('entering route', studentId)
 	Students.destroy({
 		where: {
 			id: studentId
 		}
 	})
-		.then(() => res.status(204).end())
+		.then(() => {
+			console.log('exiting route')
+			res.send()
+		})
 		.catch(next)
 
 })

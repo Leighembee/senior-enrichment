@@ -40,9 +40,9 @@ class AddStudent extends Component {
     this.setState({ campusId: event.target.value })
   }
   handleSubmit(event) {
-
     event.preventDefault()
     const student = this.state
+    console.log('submitted', student)
     this.props.createNewStudent(student)
     this.setState({ name: '', email: '', imageUrl: '' })
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import UpdateStudent from './UpdateStudent'
+import { deleteExistingStudent } from './../reducers/students'
 //lodash to use _.find method
 // import _ from 'loadash'
 import _ from 'lodash'
@@ -35,7 +36,14 @@ const SingleStudent = ({ student, campuses }) => {
   )
 }
 
-const mapDispatchToProps = null
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    confirmDelete: (student) => {
+      console.log('deleted ', student)
+      dispatch(deleteExistingStudent(student, ownProps.history))
+    }
+  }
+}
 
 const mapStateToProps = ({ campuses, students }, ownProps) => {
   const paramId = Number(ownProps.match.params.studentId)

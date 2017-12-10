@@ -2,14 +2,16 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import AddNewStudent from './AddNewStudent'
-import { createNewStudent,updateExistingStudent, deleteExistingStudent } from './../reducers/students'
+import { createNewStudent,updateExistingStudent, deleteExistingStudent, fetchStudents } from './../reducers/students'
+import { createNewCampus } from '../reducers/campuses';
 
 
+//try making this a pure function instead of a class to fix delete problem
 
 class StudentList extends Component {
   constructor(props) {
     super(props)
-    const { deleteExistingStudent } = this.props
+    //const { deleteExistingStudent } = this.props
   }
 
   render() {
@@ -24,7 +26,10 @@ class StudentList extends Component {
             </NavLink>
             <button
               className="delete-button"
-              onClick={() => deleteExistingStudent(student)}>
+              onClick={() => {
+                console.log('deleting',student)
+              this.props.deleteStudents(student)
+              }}>
               <span>X</span>
             </button>
           </div>
@@ -45,7 +50,24 @@ class StudentList extends Component {
 const mapStateToProps = ({ students }) => ({students})
 
 
-const mapDispatchToProps = { createNewStudent, updateExistingStudent, deleteExistingStudent }
+// const mapDispatchToProps = { createNewStudent, updateExistingStudent, deleteExistingStudent }
+
+function mapDispatchToProps(dispatch, ownProps) {
+  return {
+    fetchStudents: function () {
+      dispatch(fetchStudents)
+    },
+    createStudents: function () {
+      dispatch(createNewCampus)
+    },
+    updateStudents: function() {
+      dispatch(AddNewStudent)
+    },
+    deleteStudents: function (student) {
+      dispatch(deleteExistingStudent(student))
+    }
+  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(StudentList)
 

@@ -36,7 +36,7 @@ function changeCampus(student) {
   }
 }
 
-function deleteStudent() {
+function deleteStudent(student) {
   return {
     type:  DELETE_STUDENT,
     student: student
@@ -74,10 +74,14 @@ export const updateExistingStudent = student => {
 }
 
 
-export const deleteExistingStudent = student => {
-  return dispatch => {
-    dispatch(deleteStudent(student))
+export const deleteExistingStudent = (student, history) => {
+  console.log('entering thunk',`/api/students/${student.id}`, student,history)
+  return function thunk(dispatch){
     axios.delete(`/api/students/${student.id}`)
+      .then(() => {
+        console.log('PLEASE GOD WORK')
+        return dispatch(deleteStudent(student))
+      })
     .catch(err => console.error(err))
   }
 }
