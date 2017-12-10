@@ -73,7 +73,7 @@ apiRouter.delete('/:studentId', (req, res, next) => {
 			.catch(next)
 	})
 		// create a campus
-	apiRouter.post('/Campuses', (req,res,next) => {
+	apiRouter.post('/campuses', (req,res,next) => {
 		Campuses.create(req.body)
 			.then((campus) => res.json(campus))
 			.catch(next)
