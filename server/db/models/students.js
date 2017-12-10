@@ -17,17 +17,17 @@ const Students = db.define('students', {
     type: Sequelize.STRING,
     isUnique: true,
     allowNull: false,
-    validate: {
-      isEmail: true
-    }
+    // validate: {
+    //   isEmail: true
+    // }
   },
-   gpa: {
-    type: Sequelize.FLOAT,
-    validate: {
-      min: 0.0,
-      max: 4.0
-    }
-  },
+  //  gpa: {
+  //   type: Sequelize.FLOAT,
+  //   validate: {
+  //     min: 0.0,
+  //     max: 4.0
+  //   }
+
 
   imageUrl: {
     type: Sequelize.STRING,

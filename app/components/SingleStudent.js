@@ -12,17 +12,17 @@ const SingleStudent = ({ student, campuses }) => {
   const [campus] = campus.filter(campus => student.campusId === campus.id)
   return (
     <div>
-      <h2>{student.name}</h2>
-      {/* add student image */}
+      <h2>{`${student.firstName} ${student.lastName}`}</h2>
+      {/* add student  */}
 
       {
         campus &&
         <div>
           <h3>
-            {student.name} is a student of {campus.name}
+            {`${student.firstName} ${student.lastName}`} is a student of {campus.name}
           </h3>
           <NavLink to={`/campuses/${campus.id}`}>
-            <img src={campus.image} />
+            <img src={campus} />
           </NavLink>
         </div>
       }

@@ -9,18 +9,22 @@ class UpdateStudent extends Component {
 
     this.state = this.props.student
      //bind to props here
-    this.handleNameChange = this.handleNameChange.bind(this)
+    this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
+    this.handleLastNameChange = this.handleLastNameChange.bind(this)
     this.handleImageChange = this.handleImageChange.bind(this)
     this.handleEmailChange = this.handleEmailChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   // handle submits and changes here
-  handleNameChange(event){
-    this.setState({name: event.target.value})
+  handleFirstNameChange(event){
+    this.setState({ firstName: event.target.value })
+  }
+  handleLastNameChange(event){
+    this.setState({ lastName: event.target.value })
   }
   handleImageChange(event) {
-    this.setState({ image: event.target.value })
+    this.setState({ imageUrl: event.target.value })
   }
   handleEmailChange(event) {
     this.setState({ email: event.target.value })
@@ -29,10 +33,11 @@ class UpdateStudent extends Component {
   handleSubmit(event) {
     event.preventDefault() //prevent annoying form defaults :)
 
-    const { name, image, email, id } = this.state
-    const editStudent = { id, name, image, email }
-    name ? editStudent.name = name :
-    image ? editStudent.image = image :
+    const { firstName, lastName, imageUrl, email, id } = this.state
+    const editStudent = { id, firstName, lastName, imageUrl, email }
+    firstName ? editStudent.firstName = firstName :
+    lastName ? editStudent.lastName = lastName :
+    imageUrl ? editStudent.imageUrl = imageUrl :
     email ? editStudent.email = email :
     this.props.updateExistingStudent(editStudent)
   }
@@ -44,9 +49,14 @@ class UpdateStudent extends Component {
           <h3>Update Student</h3>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Name:
-            <input type="text" value={this.state.name}
-              onChange={this.handleNameChange} />
+            First Name:
+            <input type="text" value={this.state.firstName}
+              onChange={this.handleFirstNameChange} />
+          </label>
+          <label>
+            Last Name:
+            <input type="text" value={this.state.lastName}
+              onChange={this.handleLastNameChange} />
           </label>
           <label>
             Email:
@@ -55,7 +65,7 @@ class UpdateStudent extends Component {
             </label>
           <label>
             Photo:
-            <input type="text" value={this.state.image}
+            <input type="text" value={this.state.imageUrl}
               onChange={this.handleImageChange}/>
           </label>
            <input type="submit" value="Submit" />
