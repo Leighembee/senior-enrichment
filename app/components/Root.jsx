@@ -12,7 +12,7 @@ class Root extends Component {
   render() {
     return (
       <div>
-        {/* <CampusList/> */}
+
         <NavBar />
 
       </div>

@@ -3,7 +3,6 @@ import { combineReducers } from 'redux'
 import students from './students'
 import campuses from './campuses'
 
-const initialState = {}
 
 const rootReducer = combineReducers({
   students: students,

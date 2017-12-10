@@ -5,7 +5,6 @@ import { fetchStudents } from './../reducers/students'
 
 
 
-
 class StudentList extends Component {
 
   componentDidMount() {
@@ -27,8 +26,6 @@ class StudentList extends Component {
                  ))
             }
 
-
-
           </ul>
           </div>
       )
@@ -36,12 +33,9 @@ class StudentList extends Component {
 
   }
 
-
 }
 
-
-
-function mapStateToprops(storeState, ownProps) {
+function mapStateToProps(storeState, ownProps) {
   return {
     students: storeState.students
   }
@@ -55,7 +49,6 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-const StudentListContainer = connect(mapStateToprops, mapDispatchToProps)(StudentList)
+const StudentListContainer = connect(mapStateToProps, mapDispatchToProps)(StudentList)
 
 export default StudentListContainer
-
