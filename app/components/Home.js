@@ -2,13 +2,13 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const Home = () => (
-  <div>
+  <div className="mainContainer">
     <NavLink to={'/campuses'}>
-    <h2>campus logo here</h2>
+    <div className="campuseshome">Campuses</div>
     </NavLink>
 
     <NavLink to={'/students'}>
-    <h2>student logo here</h2>
+    <div className="studentshome">Students</div>
     </NavLink>
   </div>
 )

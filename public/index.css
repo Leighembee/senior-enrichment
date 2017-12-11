@@ -1,57 +1,56 @@
-#main{
-  font-family: 'Raleway', sans-serif;
-  font-family: 'Lobster', cursive;
-  background-image: url('./images/universitybackground.jpg');
-  background-size: cover;
+
+body{
+  background-image: url('https://i.pinimg.com/564x/b9/de/ef/b9deefb7222a90a889099c3dbd2c6221.jpg');
+  background-size: 100%;
   background-repeat: no-repeat;
-  position: absolute;
-  overflow: hidden;
-  top: 0; right: 0; bottom: 0; left: 0;
+  color: white;
+}
+a:link{
+  text-decoration: none;
+
 }
 
-
-.add-student{
-position: fixed;
-display: block;
-margin-bottom: 40px;
-text-align: center;
-position: relative;
+.main-nav{
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  height: 70px;
+  opacity: .5;
+  border-radius: 15px;
+  background-color:grey;
+  color:white;
 }
 
-/* .input-styles{
-  text-align: center
-} */
-#campusForm {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-#campusContent {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-#close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
+.nav-ul{
+  list-style: none;
+  font-family: 'Raleway';
   font-weight: bold;
+  font-variant: small-caps;
+  height: 20px;
+
 }
 
-#close:hover,
-#close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+ li{
+  display: inline-block;
+  padding-right:20px;
+  font-size: 24px;
+
+}
+
+.mainContainer {
+   display:flex;
+   justify-content: space-around;
+   font-family: 'Lobster';
+   margin-top: 50px;
+}
+.studentshome,
+.campuseshome{
+font-size: 80px;
+color:rgb(37, 17, 37);
+text-shadow: 1px 3px black;
+}
+
+.studentshome:hover,
+.campuseshome:hover{
+text-shadow: 2px 1px grey;
 }

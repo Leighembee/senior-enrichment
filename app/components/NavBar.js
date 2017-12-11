@@ -7,16 +7,13 @@ import StudentList from './StudentList'
 const NavBar = () => {
   return (
 
-    <nav>
-    <div>
-    <ul className="nav justify-content-end">
-        <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
-        <li className="nav-item"><Link className="nav-link" to="/campuses">Campuses</Link></li>
-        <li className="nav-item"><Link className="nav-link" to="/students">Students</Link></li>
+    <div className="main-nav">
+    <ul className="nav-ul">
+        <li><Link className="nav-link" to="/">home</Link></li>
+        <li><Link className="nav-link" to="/campuses">campuses</Link></li>
+        <li><Link className="nav-link" to="/students">students</Link></li>
           </ul>
-
-        </div>
-      </nav>
+      </div>
 
   )
 }
