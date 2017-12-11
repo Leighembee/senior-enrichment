@@ -38,39 +38,38 @@ function changeCampus(student) {
 
 function deleteStudent(student) {
   return {
-    type:  DELETE_STUDENT,
+    type: DELETE_STUDENT,
     student: student
   }
 }
 
 
 
- // thunks
+// thunks
 
 export const fetchStudents = () => {
   return dispatch => {
     axios.get('/api/students')
-    .then(res => res.data)
-    .then(students => dispatch(getStudents(students)))
-    .catch(err => console.error(err))   // add error messages later
+      .then(res => res.data)
+      .then(students => dispatch(getStudents(students)))
+      .catch(err => console.error(err))   // add error messages later
   }
 }
 
 export const createNewStudent = student => {
   return dispatch => {
     axios.post('/api/students', student)
-    .then(res => res.data)
-    .then(data => dispatch(createStudent(data)))
-    .catch(err => console.error(err))
+      .then(res => res.data)
+      .then(data => dispatch(createStudent(data)))
+      .catch(err => console.error(err))
   }
 }
 
 export const updateExistingStudent = (student) => {
-
-  return function thunk(dispatch) {
+    return function thunk(dispatch) {
     axios.put(`/api/students/${student.id}`, student)
-      .then(response => {
-        return response.data
+      .then(res => {
+        return res.data
       })
       .then(() => {
         dispatch(fetchStudents())
@@ -81,12 +80,12 @@ export const updateExistingStudent = (student) => {
 
 
 export const deleteExistingStudent = (student, history) => {
-  return function thunk(dispatch){
+  return function thunk(dispatch) {
     axios.delete(`/api/students/${student.id}`)
       .then(() => {
         return dispatch(deleteStudent(student))
       })
-    .catch(err => console.error(err))
+      .catch(err => console.error(err))
   }
 }
 

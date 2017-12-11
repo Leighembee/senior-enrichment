@@ -45,14 +45,14 @@ function deleteCampus() {
 
 
 
- // thunks
+// thunks
 
 export const fetchCampuses = () => {
   return dispatch => {
     axios.get('/api/campuses')
-    .then(res => res.data)
-    .then(campuses => dispatch(getCampuses(campuses)))
-    .catch(err => console.error(err))   // add error messages later
+      .then(res => res.data)
+      .then(campuses => dispatch(getCampuses(campuses)))
+      .catch(err => console.error(err))   // add error messages later
   }
 }
 
@@ -60,36 +60,42 @@ export const fetchCampuses = () => {
 export const createNewCampus = campus => {
   return dispatch => {
     axios.post('/api/campuses', campus)
-    .then(res => res.data)
-    .then(data => dispatch(createCampus(data)))
-    .catch(err => console.error(err))
+      .then(res => res.data)
+      .then(data => dispatch(createCampus(data)))
+      .catch(err => console.error(err))
   }
 }
 
 
 
 
-export const updateExistingCampus = campus => {
-  return dispatch => {
-    dispatch(updatecampus(campus))
+export const updateExistingCampus = (campus) => {
+  return function thunk(dispatch) {
     axios.put(`/api/campuses/${campus.id}`, campus)
-    .catch(err => console.error(err => console.error(err)))
+      .then(res => {
+        return res.data
+      })
+      .then(() => {
+        dispatch(fetchCampuses())
+      })
+      .catch(err => console.log(err))
   }
 }
 
 
-export const deleteExistingCampus = campus => {
-  return dispatch => {
-    dispatch(deletecampus(campus))
-    axios.delete(`/api/campuses/${campus.id}`)
-    .catch(err => console.error(err))
+export const deleteExistingCampus = (campus, history) => {
+  return function thunk(dispatch) {
+    axios.delete(`/api/students/${campus.id}`)
+      .then(() => {
+        return dispatch(deleteCampus(campus))
+      })
   }
 }
 
 
 //reducer
 
-export default function campusesReducer(campuses= [], action) {
+export default function campusesReducer(campuses = [], action) {
 
   switch (action.type) {
     case GET_CAMPUSES:

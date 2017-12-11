@@ -20,10 +20,9 @@ class StudentList extends Component {
       {this.props.students.map(student => {
         return (
           <div key={student.id}>
-            <h2 className="student-name">{student.firstName}</h2>
             <NavLink to={`/students/${student.id}`}>
-              <img className="student-photo" src={student.imageUrl} />
-            </NavLink>
+            <h2 className="student-name">{student.firstName}</h2>
+              </NavLink>
             <button
               className="delete-button"
               onClick={() => {
