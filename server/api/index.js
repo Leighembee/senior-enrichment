@@ -84,7 +84,7 @@ apiRouter.delete('/students/:studentId', (req, res, next) => {
 	})
 
 	//update a campus
-	apiRouter.put('/:campusId', (req, res, next) => {
+	apiRouter.put('/campuses/:campusId', (req, res, next) => {
 		const campusId = req.params.campusId
 		Campuses.findOne({
 			where: {
@@ -96,19 +96,23 @@ apiRouter.delete('/students/:studentId', (req, res, next) => {
 			.catch(next)
 	})
 
-	//delete a campus
-	apiRouter.delete('/:campusId', (req, res, next) => {
-		const campusId = req.params.campusId
+
+
+	apiRouter.delete('/campuses/:campusId', (req, res, next) => {
+		const campusId = req.params.studentId
+		console.log('entering route', campusId)
 		Campuses.destroy({
 			where: {
 				id: campusId
 			}
 		})
-			.then(() => res.status(204).end())
+			.then(() => {
+				console.log('exiting route')
+				res.send()
+			})
 			.catch(next)
 
 	})
-
 
 
 

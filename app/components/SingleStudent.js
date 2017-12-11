@@ -24,7 +24,7 @@ const SingleStudent = ({ student, campuses }) => {
             {`${student.firstName} ${student.lastName}`} is a student of {campus.name}
           </h3>
           <NavLink to={`/campuses/${campus.id}`}>
-            <h3>addcampuslogo</h3>
+             <h3>campus</h3>
           </NavLink>
         </div>
       }

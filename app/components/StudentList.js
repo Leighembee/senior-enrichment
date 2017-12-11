@@ -2,67 +2,61 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import AddNewStudent from './AddNewStudent'
-import { createNewStudent,updateExistingStudent, deleteExistingStudent, fetchStudents } from './../reducers/students'
+import { createNewStudent, updateExistingStudent, deleteExistingStudent, fetchStudents } from './../reducers/students'
 import { createNewCampus } from '../reducers/campuses';
 
-
-//try making this a pure function instead of a class to fix delete problem
 
 class StudentList extends Component {
   constructor(props) {
     super(props)
-    //const { deleteExistingStudent } = this.props
+
   }
 
   render() {
-    return(
-    <div>
-      {this.props.students.map(student => {
-        return (
-          <div key={student.id}>
-            <NavLink to={`/students/${student.id}`}>
-            <h2 className="student-name">{student.firstName}</h2>
+    return (
+      <div>
+        {this.props.students.map(student => {
+          return (
+            <div key={student.id}>
+              <NavLink to={`/students/${student.id}`}>
+                <h2 className="student-name">{student.firstName}</h2>
               </NavLink>
-            <button
-              className="delete-button"
-              onClick={() => {
+              <button
+                className="student-delete-button"
+                onClick={() => {
+                  this.props.deleteStudent(student)
+                }}>
+                <span>X</span>
+              </button>
+            </div>
+          )
+        })}
 
-              this.props.deleteStudents(student)
-              }}>
-              <span>X</span>
-            </button>
-          </div>
-        )
-      })
-      }
-
-      <AddNewStudent />
-    </div>
+        <AddNewStudent />
+      </div>
     )
-    }
-
   }
 
+}
 
 
 
-const mapStateToProps = ({ students }) => ({students})
 
+const mapStateToProps = ({ students }) => ({ students })
 
-// const mapDispatchToProps = { createNewStudent, updateExistingStudent, deleteExistingStudent }
 
 function mapDispatchToProps(dispatch, ownProps) {
   return {
-    fetchStudents: function () {
+    loadStudents: function () {
       dispatch(fetchStudents)
     },
     createStudents: function () {
       dispatch(createNewStudent)
     },
-    updateStudents: function() {
+    updateStudents: function () {
       dispatch(updateExistingStudent)
     },
-    deleteStudents: function (student) {
+    deleteStudent: function (student) {
       dispatch(deleteExistingStudent(student))
     }
   }

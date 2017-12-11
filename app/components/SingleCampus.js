@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import _ from 'lodash'
 
-import UpdateCampus from './UpdateCampus'
 import { deleteExistingCampus, updateExistingCampus } from './../reducers/campuses'
+import UpdateCampus from './UpdateCampus'
 
 
-const SingleCampus = ({ students, campus }) => {
+const SingleCampus = ({ campus, students }) => {
   if (!campus) return null
 
   return (
@@ -26,7 +26,7 @@ const SingleCampus = ({ students, campus }) => {
         )
       })}
 
-      {/* <UpdateCampus campus={campus} /> */}
+      <UpdateCampus campus={campus} />
      </div>
    )
 }

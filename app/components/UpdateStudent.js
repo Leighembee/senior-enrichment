@@ -15,7 +15,6 @@ class UpdateStudent extends Component {
     this.handleCampusChange = this.handleCampusChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
-//handlers here
 
   handleFirstNameChange(event) {
     this.setState({firstName: event.target.value})
@@ -33,6 +32,7 @@ class UpdateStudent extends Component {
   handleCampusChange(event) {
     this.setState({ campusId: event.target.value })
   }
+
   handleSubmit(event) {
 
     event.preventDefault();
@@ -46,6 +46,7 @@ class UpdateStudent extends Component {
   }
 
   render() {
+    const { campuses } = this.props
     return (
       <div>
         <h3>Update this student: </h3>
@@ -65,7 +66,7 @@ class UpdateStudent extends Component {
             <input type="text" value={this.state.email}
               onChange={this.handleEmailChange} />
           </label>
-          {/* <label>
+          <label>
             Campus:
             <select value={this.state.campusId} onChange={this.handleCampusChange}>
               <option value={-1}>Select a campus</option>
@@ -73,7 +74,7 @@ class UpdateStudent extends Component {
                 <option key={campus.id} value={campus.id}>{campus.name}</option>
               ))}
               </select>
-          </label> */}
+          </label>
 
             <input type="submit" value="Submit" />
 

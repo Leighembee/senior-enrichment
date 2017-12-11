@@ -71,6 +71,11 @@ class AddStudent extends Component {
               onChange={this.handleEmailChange} />
           </label>
           <label>
+            Image Link:
+            <input type="text" value={this.state.imageUrl}
+              onChange={this.handleImageChange} />
+          </label>
+          <label>
             Campus:
             <select value={this.state.campusId} onChange={this.handleCampusChange}>
               <option value={-1}>Select a campus</option>

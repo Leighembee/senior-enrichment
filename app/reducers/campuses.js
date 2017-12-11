@@ -36,7 +36,7 @@ function changeStudent(student) {
   }
 }
 
-function deleteCampus() {
+function deleteCampus(campus) {
   return {
     type: DELETE_CAMPUS,
     campus: campus
@@ -85,13 +85,13 @@ export const updateExistingCampus = (campus) => {
 
 export const deleteExistingCampus = (campus, history) => {
   return function thunk(dispatch) {
-    axios.delete(`/api/students/${campus.id}`)
+    axios.delete(`/api/campuses/${campus.id}`)
       .then(() => {
         return dispatch(deleteCampus(campus))
       })
+      .catch(err => console.error(err))
   }
 }
-
 
 //reducer
 
