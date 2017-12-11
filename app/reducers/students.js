@@ -65,21 +65,25 @@ export const createNewStudent = student => {
   }
 }
 
-export const updateExistingStudent = student => {
-  return dispatch => {
-    dispatch(updateStudent(student))
+export const updateExistingStudent = (student) => {
+
+  return function thunk(dispatch) {
     axios.put(`/api/students/${student.id}`, student)
-    .catch(err => console.error(err => console.error(err)))
+      .then(response => {
+        return response.data
+      })
+      .then(() => {
+        dispatch(fetchStudents())
+      })
+      .catch(err => console.log(err))
   }
 }
 
 
 export const deleteExistingStudent = (student, history) => {
-  console.log('entering thunk',`/api/students/${student.id}`, student,history)
   return function thunk(dispatch){
-    axios.delete(`/api/students/${student.id}`)
+    axios.delete('/')
       .then(() => {
-        console.log('PLEASE GOD WORK')
         return dispatch(deleteStudent(student))
       })
     .catch(err => console.error(err))

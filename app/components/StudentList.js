@@ -27,7 +27,7 @@ class StudentList extends Component {
             <button
               className="delete-button"
               onClick={() => {
-                console.log('deleting',student)
+
               this.props.deleteStudents(student)
               }}>
               <span>X</span>
@@ -58,10 +58,10 @@ function mapDispatchToProps(dispatch, ownProps) {
       dispatch(fetchStudents)
     },
     createStudents: function () {
-      dispatch(createNewCampus)
+      dispatch(createNewStudent)
     },
     updateStudents: function() {
-      dispatch(AddNewStudent)
+      dispatch(updateExistingStudent)
     },
     deleteStudents: function (student) {
       dispatch(deleteExistingStudent(student))

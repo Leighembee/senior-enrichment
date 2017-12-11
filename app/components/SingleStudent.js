@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { deleteExistingStudent, updateExistingStudent } from './../reducers/students'
 import UpdateStudent from './UpdateStudent'
-import { deleteExistingStudent } from './../reducers/students'
 //lodash to use _.find method
 // import _ from 'loadash'
 import _ from 'lodash'
 
 const SingleStudent = ({ student, campuses }) => {
+
 
   if (!student) return null
 
@@ -31,7 +32,6 @@ const SingleStudent = ({ student, campuses }) => {
       <h4> Student Email: </h4>
       <h5> {student.email} </h5>
       <UpdateStudent student={student} />
-
     </div>
   )
 }

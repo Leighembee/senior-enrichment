@@ -28,7 +28,7 @@ apiRouter.post('/students', (req,res,next) => {
 })
 
 //update a student
-apiRouter.put('/:studentId', (req, res, next) => {
+apiRouter.put('/students/:studentId', (req, res, next) => {
 	const studentId = req.params.studentId
 	Students.findOne({
 		where: {

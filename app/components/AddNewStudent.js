@@ -79,7 +79,9 @@ class AddStudent extends Component {
               ))}
               </select>
           </label>
-          <input type="submit" value="Submit" />
+          <button onClick={console.log('button clicked')}>
+            <input type="submit" value="Submit" />
+          </button>
         </form>
        </div>
      )
@@ -91,7 +93,7 @@ class AddStudent extends Component {
 
 // statetoprops - maptoprops
 //connect
-const mapStateToProps = ({ campuses }) => ({ campuses })
+const mapStateToProps = ({ campuses}) => ({ campuses})
 const mapDispatchToProps = {createNewStudent}
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddStudent)
