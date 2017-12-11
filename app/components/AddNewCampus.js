@@ -38,32 +38,42 @@ class AddCampus extends Component {
 
   }
 
-  //render - form here
   render() {
+    // this is for styling
+    document.getElementById('campusForm')
+    document.getElementById('formBtn')
+    document.getElementById('close')
+
     const { students } = this.props
     return (
       <div>
-        <h3>Add a new Campus: </h3>
+        <button id="formBtn" onClick={() => { campusForm.style.display='block' }} >
+          <h3>Add a new Campus: </h3>
+        </button>
+        <div id="campusForm">
+          <div id="campusContent">
+            <span id="close" onClick={() => { campusForm.style.display='none'}}>X</span>
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Name:
+            <label>
+              Name:
             <input type="text" value={this.state.name}
-              onChange={this.handleNameChange} />
-          </label>
-          <label>
-            Image Link:
+                onChange={this.handleNameChange} />
+            </label>
+            <label>
+              Image Link:
             <input type="text" value={this.state.imageUrl}
-              onChange={this.handleImageChange} />
-          </label>
-          <label>
-            Description:
+                onChange={this.handleImageChange} />
+            </label>
+            <label>
+              Description:
             <input type="text" value={this.state.description}
-              onChange={this.handleDescriptionChange} />
-          </label>
+                onChange={this.handleDescriptionChange} />
+            </label>
 
-          <input type="submit" value="Submit" />
-
-        </form>
+            <input type="submit" value="Submit" />
+            </form>
+          </div>
+        </div>
       </div>
     )
 

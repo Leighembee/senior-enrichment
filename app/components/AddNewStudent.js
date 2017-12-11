@@ -52,38 +52,52 @@ class AddStudent extends Component {
   render() {
     const { campuses } = this.props
     return (
-      <div>
+      <div className="add-student">
         <h3>Add a Student: </h3>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            First Name:
-            <input type="text" value={this.state.firstName}
+        <form action="#" methid="post" target="_blank" onSubmit={this.handleSubmit} className="form-horizontal">
+          <div className="form-group">
+            <div className="input-styles">
+          <label className="col-form-label">
+            <h6>First Name:</h6>
+            <input type="text" className="form-control-sm" placeholder="first name" value={this.state.firstName}
               onChange={this.handleFirstNameChange} />
-          </label>
-          <label>
-            Last Name:
-            <input type="text" value={this.state.lastName}
+              </label>
+
+            </div>
+            <div className="input-styles">
+          <label className="col-form-label">
+            <h6>Last Name:</h6>
+            <input type="text" className="form-control-sm" value={this.state.lastName}
               onChange={this.handleLastNameChange} />
-          </label>
-          <label>
-            Email:
-            <input type="text" value={this.state.email}
+              </label>
+          </div>
+
+            <div className="input-styles">
+          <label className="col-form-label">
+            <h6>Email:</h6>
+            <input type="text" className="form-control-sm" value={this.state.email}
               onChange={this.handleEmailChange} />
-          </label>
-          <label>
-            Image Link:
-            <input type="text" value={this.state.imageUrl}
+              </label>
+            </div>
+            <div className="input-styles">
+          <label className="col-form-label">
+            <h6>Image Link:</h6>
+            <input type="text" className="form-control-sm" value={this.state.imageUrl}
               onChange={this.handleImageChange} />
-          </label>
-          <label>
-            Campus:
+              </label>
+            </div>
+            <label className="col-form-label">
+            <div className="input-styles">
+            <h6>Campus:</h6>
             <select value={this.state.campusId} onChange={this.handleCampusChange}>
               <option value={-1}>Select a campus</option>
               {campuses.map(campus => (
                 <option key={campus.id} value={campus.id}>{campus.name}</option>
               ))}
-              </select>
-          </label>
+                </select>
+              </div>
+              </label>
+          </div>
 
             <input type="submit" value="Submit" />
 

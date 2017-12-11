@@ -7,12 +7,12 @@ import StudentList from './StudentList'
 const NavBar = () => {
   return (
 
-    <nav className="navbar">
-      <div className="navbar-child">
-        <ul>
-        <li><Link className="navbar-link" to="/">Home</Link></li>
-        <li><Link className="navbar-link" to="/campuses">Campuses</Link></li>
-        <li><Link className="navbar-link" to="/students">Students</Link></li>
+    <nav>
+    <div>
+    <ul className="nav justify-content-end">
+        <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
+        <li className="nav-item"><Link className="nav-link" to="/campuses">Campuses</Link></li>
+        <li className="nav-item"><Link className="nav-link" to="/students">Students</Link></li>
           </ul>
 
         </div>
