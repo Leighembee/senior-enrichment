@@ -82,7 +82,7 @@ export const updateExistingStudent = (student) => {
 
 export const deleteExistingStudent = (student, history) => {
   return function thunk(dispatch){
-    axios.delete('/')
+    axios.delete(`/api/students/${student.id}`)
       .then(() => {
         return dispatch(deleteStudent(student))
       })

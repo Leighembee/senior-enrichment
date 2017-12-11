@@ -79,9 +79,9 @@ class AddStudent extends Component {
               ))}
               </select>
           </label>
-          <button onClick={console.log('button clicked')}>
+
             <input type="submit" value="Submit" />
-          </button>
+
         </form>
        </div>
      )

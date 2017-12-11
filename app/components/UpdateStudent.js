@@ -7,14 +7,7 @@ class UpdateStudent extends Component {
   constructor(props) {
     super(props)
     this.state = this.props.student
-    // this.state = {
-    //  firstName: '',
-    //  lastName: '',
-    //  email: '',
-    //  imageUrl: 'http://oi66.tinypic.com/jskf3c.jpg',
-    //  campusId: ''
-    // }
-//bind handles here
+
     this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
     this.handleLastNameChange = this.handleLastNameChange.bind(this)
     this.handleEmailChange = this.handleEmailChange.bind(this)
@@ -36,18 +29,11 @@ class UpdateStudent extends Component {
   handleImageChange(event) {
     this.setState({imageUrl: event.target.value})
   }
-  //if the event exists then set state of campus id the event target val..else send an alert that a campus must be added!
+
   handleCampusChange(event) {
     this.setState({ campusId: event.target.value })
   }
   handleSubmit(event) {
-    // event.preventDefault()
-    //  const changeStudent = {
-    //  firstName: this.state.firstName ? this.state.firstName :this.props.firstName,
-    //  lastName: this.state.lastName ? this.state.lastName : this.props.lastName,
-    //   email: this.state.email ? this.state.email : this.props.email
-    //  }
-    // this.props.updatedStudent(changeStudent)
 
     event.preventDefault();
     const {id, firstName, lastName, imageUrl, email, campusId} = this.state;
@@ -57,12 +43,8 @@ class UpdateStudent extends Component {
     if (imageUrl) studentUpdate.imageUrl = imageUrl;
     if (email) studentUpdate.email = email;
     this.props.updateExistingStudent(studentUpdate)
-
-
-   console.log(this.props)
   }
 
-  //render - form here
   render() {
     return (
       <div>
@@ -103,19 +85,6 @@ class UpdateStudent extends Component {
   }
 
 }
-
-// statetoprops - maptoprops
-//connect
-// const mapStateToProps = ({ students }) => ({ students })
-
-// function mapDispatchToProps(dispatch, ownProps) {
-//   return {
-//     updatedStudent: function (info) {
-//       dispatch(updateExistingStudent(info))
-//   }
-//   }
-// }
-
 
 const mapStateToProps = ({ campuses, students }) => ({ campuses, students });
 const mapDispatchToProps = { updateExistingStudent };

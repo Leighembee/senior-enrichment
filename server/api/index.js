@@ -21,7 +21,7 @@ apiRouter.get('/students/:studentId', (req,res,next) => {
 		.catch(next)
 })
   // create a student
-apiRouter.post('/students', (req,res,next) => {
+apiRouter.post('/students/', (req,res,next) => {
 	Students.create(req.body)
 		.then((student) => res.json(student))
 	  .catch(next)
