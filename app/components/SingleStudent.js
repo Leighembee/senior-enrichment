@@ -30,6 +30,9 @@ const SingleStudent = ({ student, campuses }) => {
       }
       <h4> Student Email: </h4>
       <h5> {student.email} </h5>
+
+      <h4> GPA: </h4>
+      <h5> {student.gpa} </h5>
       <UpdateStudent student={student} />
     </div>
   )

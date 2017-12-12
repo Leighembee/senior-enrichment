@@ -10,6 +10,7 @@ class AddStudent extends Component {
      firstName: '',
      lastName: '',
      email: '',
+     gpa: '',
      imageUrl: 'http://oi66.tinypic.com/jskf3c.jpg',
      campusId: ''
     }
@@ -17,6 +18,7 @@ class AddStudent extends Component {
     this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
     this.handleLastNameChange = this.handleLastNameChange.bind(this)
     this.handleEmailChange = this.handleEmailChange.bind(this)
+    this.handleGradeChange = this.handleGradeChange.bind(this)
     this.handleImageChange = this.handleImageChange.bind(this)
     this.handleCampusChange = this.handleCampusChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -32,6 +34,9 @@ class AddStudent extends Component {
   handleEmailChange(event) {
     this.setState({email: event.target.value})
   }
+  handleGradeChange(event) {
+    this.setState({gpa: event.target.value})
+  }
   handleImageChange(event) {
     this.setState({imageUrl: event.target.value})
   }
@@ -44,7 +49,7 @@ class AddStudent extends Component {
     const student = this.state
     console.log('submitted', student)
     this.props.createNewStudent(student)
-    this.setState({ name: '', email: '', imageUrl: '' })
+    this.setState({ name: '', email: '', gpa: '', imageUrl: '' })
 
   }
 
@@ -55,6 +60,8 @@ class AddStudent extends Component {
       <div className="add-student">
         <h3>Add a Student: </h3>
         <form action="#" method="post" target="_blank" onSubmit={this.handleSubmit} className="form-horizontal">
+
+
           <div className="form-group">
             <div className="input-styles">
           <label className="col-form-label">
@@ -62,8 +69,9 @@ class AddStudent extends Component {
             <input type="text" className="form-control-sm" placeholder="first name" value={this.state.firstName}
               onChange={this.handleFirstNameChange} />
               </label>
-
             </div>
+
+
             <div className="input-styles">
           <label className="col-form-label">
             <h6>Last Name:</h6>
@@ -72,6 +80,7 @@ class AddStudent extends Component {
               </label>
           </div>
 
+
             <div className="input-styles">
           <label className="col-form-label">
             <h6>Email:</h6>
@@ -79,6 +88,17 @@ class AddStudent extends Component {
               onChange={this.handleEmailChange} />
               </label>
             </div>
+
+
+            <div className="input-styles">
+          <label className="col-form-label">
+            <h6>gpa:</h6>
+            <input type="integer" className="form-control-sm" value={this.state.gpa}
+              onChange={this.handleGradeChange} />
+              </label>
+            </div>
+
+
             <div className="input-styles">
           <label className="col-form-label">
             <h6>Image Link:</h6>
@@ -86,8 +106,10 @@ class AddStudent extends Component {
               onChange={this.handleImageChange} />
               </label>
             </div>
-            <label className="col-form-label">
+
+
             <div className="input-styles">
+            <label className="col-form-label">
             <h6>Campus:</h6>
             <select value={this.state.campusId} onChange={this.handleCampusChange}>
                   <option value={-1}>select a campus</option>
@@ -95,8 +117,8 @@ class AddStudent extends Component {
                 <option key={campus.id} value={campus.id}>{campus.name}</option>
               ))}
                 </select>
-              </div>
               </label>
+              </div>
           </div>
 
             <input type="submit" value="Submit" />

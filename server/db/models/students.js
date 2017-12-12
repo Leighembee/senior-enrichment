@@ -19,7 +19,15 @@ const Students = db.define('students', {
     allowNull: false,
     validate: {
       isEmail: true
+    },
+
+  gpa: {
+    type: Sequelize.FLOAT,
+    validate: {
+      min: 0.0,
+      max: 4.0
     }
+  }
 
   },
 
