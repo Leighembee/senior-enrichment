@@ -43,9 +43,9 @@ class AddCampus extends Component {
     const { students } = this.props
     return (
       <div>
-        <button >
+        <span className="new-campus-form">
           <h3>Add a new Campus: </h3>
-        </button>
+        </span>
         <div id="campusForm">
           <div id="campusContent">
         <form onSubmit={this.handleSubmit}>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import AddNewCampus from './AddNewCampus'
+import AddNewStudent from './AddNewStudent'
 import { createNewCampus, updateExistingCampus, deleteExistingCampus, fetchCampuses} from './../reducers/campuses'
 
 
@@ -13,23 +14,27 @@ class CampusList extends Component {
   render() {
     if (this.props.campuses) {
       return (
-        <div>
+        <div className ="class-form-container">
           {this.props.campuses.map(campus => {
             return (
-              <div key={campus.id}>
+
+              <div className="campus-list-container" key={campus.id}>
                 <NavLink to={`/campuses/${campus.id}`}>
                  {campus.name}
                 </NavLink>
-                <button className="campus-delete-buttom" onClick={() => {
+                <button className="campus-delete-button" onClick={() => {
                   this.props.deleteCampus(campus)
                 }}>
-               <span>X</span>
-               </button>
+               <span className="delete-button">X</span>
+                  </button>
                 </div>
+
             )
           })}
-
-          <AddNewCampus />
+          <span>
+            <AddNewCampus />
+          </span>
+          <AddNewStudent />
           </div>
       )
     }

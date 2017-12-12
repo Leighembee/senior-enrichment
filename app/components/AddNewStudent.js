@@ -54,7 +54,7 @@ class AddStudent extends Component {
     return (
       <div className="add-student">
         <h3>Add a Student: </h3>
-        <form action="#" methid="post" target="_blank" onSubmit={this.handleSubmit} className="form-horizontal">
+        <form action="#" method="post" target="_blank" onSubmit={this.handleSubmit} className="form-horizontal">
           <div className="form-group">
             <div className="input-styles">
           <label className="col-form-label">
@@ -90,7 +90,7 @@ class AddStudent extends Component {
             <div className="input-styles">
             <h6>Campus:</h6>
             <select value={this.state.campusId} onChange={this.handleCampusChange}>
-              <option value={-1}>Select a campus</option>
+                  <option value={-1}>select a campus</option>
               {campuses.map(campus => (
                 <option key={campus.id} value={campus.id}>{campus.name}</option>
               ))}
@@ -112,7 +112,7 @@ class AddStudent extends Component {
 
 // statetoprops - maptoprops
 //connect
-const mapStateToProps = ({ campuses}) => ({ campuses})
+const mapStateToProps = ({ campuses }) => ({ campuses })
 const mapDispatchToProps = {createNewStudent}
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddStudent)

@@ -99,7 +99,7 @@ apiRouter.delete('/students/:studentId', (req, res, next) => {
 
 
 	apiRouter.delete('/campuses/:campusId', (req, res, next) => {
-		const campusId = req.params.studentId
+		const campusId = req.params.campusId
 		console.log('entering route', campusId)
 		Campuses.destroy({
 			where: {

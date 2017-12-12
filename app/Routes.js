@@ -29,7 +29,6 @@ class Routes extends Component {
           <Route exact path="/" component={Home} />
             <Route exact path="/campuses" component={Campuses} />
             <Route path="/campuses/:campusId" component={SingleCampus}/>
-          {/* <Route path="/campuses/:campusId" render={(props) => <SingleCampus{...props} />} /> */}
           <Route exact path="/students" component={Students} />
           <Route path="/students/:studentId" component={SingleStudent}/>
           </Switch>

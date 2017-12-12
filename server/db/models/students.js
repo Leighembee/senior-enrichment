@@ -20,20 +20,13 @@ const Students = db.define('students', {
     validate: {
       isEmail: true
     }
-  },
-  //  gpa: {
-  //   type: Sequelize.FLOAT,
-  //   validate: {
-  //     min: 0.0,
-  //     max: 4.0
-  //   }
 
+  },
 
   imageUrl: {
     type: Sequelize.STRING,
   },
-     // to do: add virtual field to concatenate first and last names
-   //student must be assigned to a campus
+
 })
 
 module.exports = Students;

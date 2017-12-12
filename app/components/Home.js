@@ -4,7 +4,8 @@ import { NavLink } from 'react-router-dom'
 const Home = () => (
   <div className="mainContainer">
     <NavLink to={'/campuses'}>
-    <div className="campuseshome">Campuses</div>
+    <div
+    className="campuseshome">Campuses</div>
     </NavLink>
 
     <NavLink to={'/students'}>

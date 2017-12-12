@@ -6,9 +6,18 @@ body{
   color: white;
 }
 a:link{
-  text-decoration: none;
-
+ text-decoration: none;
+font-family: "raleway";
+/* border: 2px solid black; */
 }
+
+
+.campus-delete-button{
+  text-align: center;
+  /* border: 2px solid black; */
+}
+
+
 
 .main-nav{
   display:flex;
@@ -34,7 +43,6 @@ a:link{
   display: inline-block;
   padding-right:20px;
   font-size: 24px;
-
 }
 
 .mainContainer {
@@ -43,6 +51,8 @@ a:link{
    font-family: 'Lobster';
    margin-top: 50px;
 }
+
+
 .studentshome,
 .campuseshome{
 font-size: 80px;
@@ -53,4 +63,37 @@ text-shadow: 1px 3px black;
 .studentshome:hover,
 .campuseshome:hover{
 text-shadow: 2px 1px grey;
+}
+
+
+
+.campus-list-container {
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.campus-students-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+#campusForm{
+  display:flex;
+
+
+}
+
+#campusForm  label{
+  margin:30px;
+  display: inline-block
+}
+
+
+#campusContent{
+  display: flex;
+  flex-direction: column;
 }

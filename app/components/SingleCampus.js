@@ -5,6 +5,7 @@ import _ from 'lodash'
 
 import { deleteExistingCampus, updateExistingCampus } from './../reducers/campuses'
 import UpdateCampus from './UpdateCampus'
+import AddNewStudent from './AddNewStudent'
 
 
 const SingleCampus = ({ campus, students }) => {
@@ -27,6 +28,7 @@ const SingleCampus = ({ campus, students }) => {
       })}
 
       <UpdateCampus campus={campus} />
+
      </div>
    )
 }
