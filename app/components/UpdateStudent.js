@@ -37,10 +37,11 @@ class UpdateStudent extends Component {
 
     event.preventDefault();
     const {id, firstName, lastName, imageUrl, email, campusId} = this.state;
-    const studentUpdate = {id, firstName, imageUrl, email};
+    const studentUpdate = {id, firstName, imageUrl, email,campusId};
     if (firstName) studentUpdate.firstName = firstName;
     if (lastName) studentUpdate.lastName = lastName;
     if (imageUrl) studentUpdate.imageUrl = imageUrl;
+    if(campusId) studentUpdate.campusId - campusId;
     if (email) studentUpdate.email = email;
     this.props.updateExistingStudent(studentUpdate)
   }

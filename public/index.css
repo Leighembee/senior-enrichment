@@ -1,4 +1,7 @@
 
+
+
+
 body{
   background-image: url('https://i.pinimg.com/564x/b9/de/ef/b9deefb7222a90a889099c3dbd2c6221.jpg');
   background-size: 100%;
@@ -46,6 +49,7 @@ font-family: "raleway";
 }
 
 .mainContainer {
+
    display:flex;
    justify-content: space-around;
    font-family: 'Lobster';
@@ -53,8 +57,17 @@ font-family: "raleway";
 }
 
 
+.student-list{
+  background-image: url('https://i.pinimg.com/564x/b9/de/ef/b9deefb7222a90a889099c3dbd2c6221.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+
 .studentshome,
 .campuseshome{
+
 font-size: 80px;
 color:rgb(37, 17, 37);
 text-shadow: 1px 3px black;
@@ -75,6 +88,10 @@ text-shadow: 2px 1px grey;
 
 
 .campus-students-list{
+  background-image: url('https://i.pinimg.com/564x/b9/de/ef/b9deefb7222a90a889099c3dbd2c6221.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

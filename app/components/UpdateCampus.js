@@ -30,6 +30,7 @@ class UpdateCampus extends Component {
     const campusUpdate = { id, name, imageUrl, description}
     if (name) campusUpdate.name = name
     if (imageUrl) campusUpdate.imageUrl = imageUrl
+    if(description) campusUpdate.description = description;
     this.props.updateExistingCampus(campusUpdate)
   }
 

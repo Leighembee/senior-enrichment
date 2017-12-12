@@ -14,7 +14,7 @@ class StudentList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="student-list">
         {this.props.students.map(student => {
           return (
             <div key={student.id}>
